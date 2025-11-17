@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - cd ai-learning-path
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: ai-learning-path/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - ai-learning-path/node_modules/**/*
